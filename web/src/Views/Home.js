@@ -7,7 +7,7 @@ function Home() {
     const [headers, setHeaders] = useState([]);
     const [list, setList] = useState([]);
     const [showForm, setShowForm] = useState(false);
-    const [selectedUser, setUser] = useState({});
+    const [selectedUser, setUser] = useState({ id: 0 });
 
     const addOrUpdateUser = async (user) => {
         if (user.id <= 0) {

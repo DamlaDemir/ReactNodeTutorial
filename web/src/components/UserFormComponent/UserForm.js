@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 
 function UserForm(props) {
-
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState({ id: 0 });
 
     const addOrUpdateUser = () => {
+        debugger;
         props.addOrUpdateUser(user);
     }
 

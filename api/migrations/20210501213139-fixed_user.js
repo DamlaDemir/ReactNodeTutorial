@@ -9,6 +9,9 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
+    await queryInterface.changeColumn('Users', 'firstName', {
+      type: Sequelize.STRING,
+      allowNull: true
+    });
   }
 };
