@@ -1,0 +1,19 @@
+.tableContent {
+    width:500px;
+    margin-top: 20px;
+    margin-right:50%;
+    margin-left: 10%;
+}
+
+.crudButton {
+    display:inline-block;
+    text-align: center;
+}
+
+.buttonDiv {
+    width: 200px;
+}
+
+div button{
+    display:inline-block;
+}

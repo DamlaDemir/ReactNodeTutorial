@@ -4,7 +4,12 @@
   "description": "My first Node.js project",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "sequelize-cli db:create",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:g:migration": "sequelize-cli migration:generate --name",
+    "db:seeds": "sequelize-cli db:seed:all",
+    "db:g:seed": "sequelize-cli seed:generate --name"
   },
   "repository": {
     "type": "git",
@@ -21,6 +26,14 @@
   },
   "homepage": "https://github.com/DamlaDemir/ReactNodeTutorial#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2",
+    "sequelize-auto-migrations": "^1.0.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }

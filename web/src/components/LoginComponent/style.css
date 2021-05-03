@@ -1,0 +1,11 @@
+.loginPanel {
+    margin-top:200px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    margin:5px !important;
+    float:right
+}
