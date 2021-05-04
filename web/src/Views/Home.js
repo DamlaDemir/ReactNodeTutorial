@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from '../components/DataTableComponent/DataTable';
 import UserForm from '../components/UserFormComponent/UserForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUsers } from "../redux/actions";
 
 function Home() {
     const [headers, setHeaders] = useState([]);
-    const [list, setList] = useState([]);
+    // const [list, setList] = useState([]);
     const [showForm, setShowForm] = useState(false);
     const [selectedUser, setUser] = useState({ id: 0 });
+    const list = useSelector((state) => state.user.users);
+    const dispatch = useDispatch();
 
     const addOrUpdateUser = async (user) => {
         if (user.id <= 0) {
@@ -27,12 +31,7 @@ function Home() {
     }
 
     const getAllUsers = async () => {
-        let response = await axios.get('http://localhost:8000/user/getAll');
-
-        if (response.status === 200) {
-            setList(response.data);
-            setHeaders(Object.keys(response.data[0]).map(column => column));
-        }
+        dispatch(getUsers())
     }
 
     const deleteUser = async (id) => {
@@ -43,8 +42,6 @@ function Home() {
             await getAllUsers();
         }
     }
-
-
 
     // Component Did Mount
     useEffect(() => {

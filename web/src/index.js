@@ -7,16 +7,23 @@ import {
   BrowserRouter as Router,
   Route, Switch
 } from "react-router-dom";
-
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
+import reducers from "./redux/reducers/index.js";
+import { Provider } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Router>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 

@@ -5,7 +5,6 @@ function UserForm(props) {
     const [user, setUser] = useState({ id: 0 });
 
     const addOrUpdateUser = () => {
-        debugger;
         props.addOrUpdateUser(user);
     }
 
